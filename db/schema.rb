@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325190713) do
+ActiveRecord::Schema.define(version: 20150409015454) do
+
+  create_table "pins", force: :cascade do |t|
+    t.string   "description"
+    t.string   "string"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "user_id"
+    t.string   "integer"
+  end
+
+  add_index "pins", ["integer"], name: "index_pins_on_integer"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
