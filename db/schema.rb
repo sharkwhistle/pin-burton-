@@ -11,18 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409015454) do
+ActiveRecord::Schema.define(version: 20150414020141) do
 
   create_table "pins", force: :cascade do |t|
     t.string   "description"
-    t.string   "string"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "user_id"
-    t.string   "integer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
-  add_index "pins", ["integer"], name: "index_pins_on_integer"
+  add_index "pins", ["user_id"], name: "index_pins_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
