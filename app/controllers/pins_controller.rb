@@ -34,7 +34,7 @@ class PinsController < ApplicationController
     if @pin.update(pin_params)
       redirect_to @pin, notice: 'Pin was successfully updated.'
     else
-    render action: 'edit'
+      render action: 'edit'
     end
   end
 
@@ -44,8 +44,9 @@ class PinsController < ApplicationController
   end
 
   private
+  # Use callbacks to share common setup or constraints between actions.
     def set_pin
-      @pin = Pin.find(params[:id])
+      @pin = Pin.find_by(id: params[:id])
     end
 
     def correct_user
@@ -54,6 +55,6 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end
