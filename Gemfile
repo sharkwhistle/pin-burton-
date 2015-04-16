@@ -12,7 +12,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.4.0'
 gem 'paperclip', '~> 4.2'
-gem 'aws-sdk', '< 2.0' 
 
   group :development, :test do
     gem 'sqlite3'
@@ -24,4 +23,5 @@ gem 'aws-sdk', '< 2.0'
   group :production do
     gem 'pg'
     gem 'rails_12factor'
+    gem 'aws-sdk', '< 2.0'
   end
